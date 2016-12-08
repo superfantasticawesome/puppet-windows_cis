@@ -1,0 +1,17 @@
+{
+  "Gemfile": "dbc1a15e3a264c03878028240cfc5d89",
+  "README.md": "1a3607c54affc21d425fe4331a944381",
+  "Rakefile": "20b80e526e351a74df2001f504e756d2",
+  "files/gp_utils/lgpo.exe": "460149a9ee44656b115f07f5a02e0bb2",
+  "files/gp_utils/policy.inf": "1adff35892c86658efef92727459dc00",
+  "files/gp_utils/rules_list.txt": "76881ba454371a8e310e5cfff15ce167",
+  "manifests/auditpol.pp": "09269e500aed8262ce0b463cd0677ee8",
+  "manifests/init.pp": "d8e4ea15be1fc79e1d25f7c2624a630d",
+  "manifests/rules.pp": "34be8ce8a72bbed2c6e819088e01009d",
+  "metadata.json": "4de85571d59664267d4adacf7c43aad3",
+  "spec/classes/init_spec.rb": "6a1fd26ab5c45e8212f1b69540d2f05c",
+  "spec/spec_helper.rb": "0db89c9a486df193c0e40095422e19dc",
+  "templates/import_group_policy.ps1.erb": "ec75adffa27225734a94de27936d75ff",
+  "templates/import_policy_secedit.ps1.erb": "2173ff9092a910703c50650c54cdd3f5",
+  "tests/init.pp": "2deb27f74f2bf5ee0dbb89a8011b3acb"
+}

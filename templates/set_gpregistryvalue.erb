@@ -1,0 +1,10 @@
+Import-Module GroupPolicy
+
+Switch -Wildcard ('<%= @registry_type %>') { 
+    '*string' { [string]$registry_value = '<%= @registry_value %>' } 
+    'dword'  { [int]$registry_value = <%= @registry_value %> } 
+}
+
+Try {
+    Get-GPO '<%= @group_policy %>') | Set-GPRegistryValue -Key '<%= @registry_path %>' -ValueName '<%= @registry_key %>' -Type <%= @registry_type %> -Value $registry_value
+} Catch { }

@@ -1,7 +1,7 @@
 class windows_cis() {
   # This module applies scored CIS benchmarks, based on 'Profile Applicability' 
   # and recommendations, according to the CIS Windows Server 2012 R2 Benchmark 
-  # Guide v2.1.0; including MSRP best practices for cloud-based instances. In the 
+  # Guide v2.1.0; including best practices for cloud-based instances. In the 
   # parlance of the aforementioned guide, this module determines 'applicability' 
   # from the value of the Facter fact '$::domain_role'; whose value can be
   # 'domain_controller', 'member_server', or 'standalone_server'.

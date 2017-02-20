@@ -2,7 +2,8 @@ class windows_cis::local_group_policy {
   # Author's Note: See http://blogs.technet.com/b/secguide/archive/2016/01/21/lgpo-exe-local-group-policy-object-utility-v1-0.aspx
   #
   windows_cis::download { 'download-LGPO.zip':
-    url         => 'http://blogs.technet.com/cfs-filesystemfile.ashx/__key/telligent-evolution-components-attachments/01-4062-00-00-03-65-94-11/LGPO.zip',
+#    url         => 'http://blogs.technet.com/cfs-filesystemfile.ashx/__key/telligent-evolution-components-attachments/01-4062-00-00-03-65-94-11/LGPO.zip',
+    url         => 'https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/telligent.evolution.components.attachments/01/4062/00/00/03/65/94/11/LGPO.zip',
     destination => 'C:\Staging',
   }
   

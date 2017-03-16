@@ -261,10 +261,9 @@ define windows_cis::audit_policies::apply(
   }
   
   if ( $role[$::domain_role] in $domain_roles ) {
-    @auditpol { "${name}":
+    auditpol { "${name}":
       success     => $success,
       failure     => $failure,
     }
-    realize(Auditpol["${name}"])
   }
 }

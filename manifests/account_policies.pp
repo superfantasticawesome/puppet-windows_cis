@@ -394,10 +394,9 @@ define windows_cis::account_policies::apply(
   }
   
   if ( $role[$::domain_role] in $domain_roles ) {
-    @local_security_policy { "${name}":
+    local_security_policy { "${name}":
       policy_setting => $policy_setting,
       policy_value   => $policy_value,
     }
-    realize(Local_security_policy["${name}"])
   }
 }

@@ -10,7 +10,7 @@ class windows_cis::tools {
     $windows_feature = 'Add-WindowsFeature'
   }
   
-  $windows_feature = 'Add-WindowsFeature'
+  #$windows_feature = 'Add-WindowsFeature'
   case $::domain_role {
     'domain_controler': {
       exec { 'Install GPMC':

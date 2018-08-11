@@ -14,40 +14,40 @@ class windows_cis::account_policies {
     # References: CCE-37166-6
     #
     'Enforce password history' => {   
-      domain_roles   => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
-      policy_value   => '24', 
+      domain_roles => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
+      policy_value => '24', 
     },
     
     # CIS: 1.1.2 (L1) Set 'Maximum password age' to '60 or fewer days, but not 0' (Scored)
     # References: CCE-37167-4
     #
     'Maximum password age' => {   
-      domain_roles   => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
-      policy_value   => '60', 
+      domain_roles => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
+      policy_value => '60', 
     },   
     
     # CIS: 1.1.3 (L1) Set 'Minimum password age' to '1 or more day(s)' (Scored)
     # References: CCE-37073-4
     #
     'Minimum password age' => {   
-      domain_roles   => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
-      policy_value   => '1', 
+      domain_roles => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
+      policy_value => '1', 
     }, 
     
     # CIS: 1.1.4 (L1) Set 'Minimum password length' to '14 or more character(s)' (Scored)
     # References: CCE-36534-6
     #
     'Minimum password length' => {   
-      domain_roles   => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
-      policy_value   => '14', 
+      domain_roles => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
+      policy_value => '14', 
     },    
     
     # CIS: 1.1.5 (L1) Set 'Password must meet complexity requirements' to 'Enabled' (Scored)
     # References: CCE-37063-5
     #
     'Password must meet complexity requirements' => {   
-      domain_roles   => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
-      policy_value   => '1', 
+      domain_roles => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
+      policy_value => '1', 
     },
     
     # CIS: 1.1.6 (L1) Set 'Store passwords using reversible encryption' to 'Disabled' (Scored)
@@ -62,9 +62,9 @@ class windows_cis::account_policies {
     # References: CCE-37034-6
     #
     'Account lockout duration' => {   
-      domain_roles   => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
-      policy_value   => '15', 
-      require        => [
+      domain_roles => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
+      policy_value => '15', 
+      require      => [
         Local_security_policy['Account lockout threshold'],
         Local_security_policy['Reset account lockout counter after'],
       ]
@@ -74,17 +74,17 @@ class windows_cis::account_policies {
     # References: CCE-36008-1
     #
     'Account lockout threshold' => {  
-      domain_roles   => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
-      policy_value   => '10', 
+      domain_roles => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
+      policy_value => '10', 
     },
     
     # CIS: 1.2.3 (L1) Set 'Reset account lockout counter after' to '15 or more minute(s)' (Scored)
     # References: CCE-36883-7
     #
     'Reset account lockout counter after' => {  
-      domain_roles   => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
-      policy_value   => '15', 
-      require        => Local_security_policy['Account lockout threshold'],
+      domain_roles => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
+      policy_value => '15', 
+      require      => Local_security_policy['Account lockout threshold'],
     },  
     
     # CIS: 2 Local Policies
@@ -108,10 +108,10 @@ class windows_cis::account_policies {
     # References: CCE-35818-4
     #
     'Access this computer from the network' => {  
-      domain_roles   => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
-      policy_value   => $::domain_role ? { 
+      domain_roles => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
+      policy_value => $::domain_role ? { 
         'domain_controller' => 'Administrators, Authenticated Users, ENTERPRISE DOMAIN CONTROLLERS',
-        default             => '*S-1-5-11,*S-1-5-32-544', #'Administrators, Authenticated Users',
+        default           => '*S-1-5-11,*S-1-5-32-544', #'Administrators, Authenticated Users',
       },
     },
 
@@ -147,8 +147,8 @@ class windows_cis::account_policies {
     # References: CCE-35912-5
     #
     'Back up files and directories' => {
-      domain_roles   => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
-      policy_value   => 'Administrators',
+      domain_roles => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
+      policy_value => 'Administrators',
     },
 
     # CIS: 2.2.9 (L1) Set 'Change the system time' to 'Administrators, LOCAL SERVICE' (Scored)
@@ -208,16 +208,16 @@ class windows_cis::account_policies {
     # References: CCE-36923-1
     #
     'Deny log on as a batch job' => {
-      domain_roles   => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
-      policy_value   => 'Guests',
+      domain_roles => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
+      policy_value => 'Guests',
     },
 
     # CIS: 2.2.19 (L1) Set 'Deny log on as a service' to include 'Guests' (Scored)
     # References: CCE-36877-9
     #
     'Deny log on as a service' => {
-      domain_roles   => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
-      policy_value   => 'Guests',
+      domain_roles => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
+      policy_value => 'Guests',
     },
     
     # CIS: 2.2.20 (L1) Set 'Deny log on locally' to include 'Guests' (Scored)
@@ -319,8 +319,8 @@ class windows_cis::account_policies {
     # References: CCE-37613-7
     #
     'Restore files and directories' => {
-      domain_roles   => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
-      policy_value   => 'Administrators',
+      domain_roles => [ 'CIS Domain Policy', 'CIS Domain Controller Policy', 'No Domain Policy' ],
+      policy_value => 'Administrators',
     },
     
     # CIS: 2.2.38 (L1) Set 'Synchronize directory service data' to 'No One' (DC only) (Scored)
@@ -376,16 +376,14 @@ class windows_cis::account_policies {
     # References: CCE-38027-9
     # This benchmark is omitted becasue the Guest account is disabled by default
     #
-
-  }    
-  
+  }
   create_resources(windows_cis::account_policies::apply, $account_policies)
 }
 
 define windows_cis::account_policies::apply(
   $domain_roles,
   $policy_setting = undef,
-  $policy_value = undef
+  $policy_value   = undef
 ) {
   $role = {
     domain_controller => 'CIS Domain Controller Policy',
